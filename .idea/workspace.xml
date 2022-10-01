@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d27c8b32-49a3-4bcd-b32b-4fb8c82c15f6" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/xiezhewan.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2E7Y4cdmUhKLGFjXD7Xcf4cBaZf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Administrator/Documents/HTML&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Administrator\Documents\HTML\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="xiezhewan.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HTML/xiezhewan.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript 调试.xiezhewan.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d27c8b32-49a3-4bcd-b32b-4fb8c82c15f6" name="Changes" comment="" />
+      <created>1661947900357</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661947900357</updated>
+      <workItem from="1661947901735" duration="111000" />
+      <workItem from="1661948017024" duration="1810000" />
+      <workItem from="1661949843760" duration="4353000" />
+      <workItem from="1661996997914" duration="13866000" />
+      <workItem from="1662029650541" duration="9942000" />
+      <workItem from="1662082007521" duration="7629000" />
+      <workItem from="1662103834878" duration="2539000" />
+      <workItem from="1662107261931" duration="599000" />
+      <workItem from="1662113776324" duration="62000" />
+      <workItem from="1662113850442" duration="3484000" />
+      <workItem from="1662177863102" duration="71000" />
+      <workItem from="1662177934872" duration="674000" />
+      <workItem from="1662188247366" duration="7353000" />
+      <workItem from="1662195700924" duration="8441000" />
+      <workItem from="1662274489023" duration="6805000" />
+      <workItem from="1662290552190" duration="2744000" />
+      <workItem from="1662301733774" duration="2440000" />
+      <workItem from="1662304269288" duration="2111000" />
+      <workItem from="1662391763819" duration="4882000" />
+      <workItem from="1663053354304" duration="601000" />
+      <workItem from="1663212037237" duration="1293000" />
+      <workItem from="1663939943708" duration="435000" />
+      <workItem from="1664182635988" duration="1506000" />
+      <workItem from="1664191493337" duration="4236000" />
+      <workItem from="1664435448666" duration="1251000" />
+      <workItem from="1664452952916" duration="108000" />
+      <workItem from="1664606438819" duration="16104000" />
+      <workItem from="1664630001259" duration="876000" />
+      <workItem from="1664636644281" duration="302000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
