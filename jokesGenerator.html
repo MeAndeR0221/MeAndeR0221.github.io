@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jokesGenerator</title>
+</head>
+<style>
+    body {
+        font-family: helvetica, sans-serif;
+        width: 350px;
+        border-color: #5E2612;
+        border-width: 10px;
+        border-style: dashed;
+        border-radius: 5px;
+        padding: 1em;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    div {
+        padding-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        width: 150px;
+    }
+
+    p {
+        background-image: url("images/bg.jpeg");
+        background-size: cover;
+        color: #5E2612;
+        padding: 10px;
+    }
+</style>
+<body>
+<div>
+    <label for="customname" id="lbl-customname">请输入自定义的名字：</label>
+    <input id="customname" placeholder="李雷" type="text">
+</div>
+<div>
+    <label for="metric">公制</label><input checked="" id="metric" name="measure" type="radio" value="metric">
+    <label for="american">美制</label><input id="american" name="measure" type="radio" value="american">
+</div>
+<div>
+    <button class="randomize">随机生成笑话</button>
+</div>
+<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+<p class="story" style="visibility: visible;"></p>
+
+<script>
+    const customName = document.getElementById('customname');
+    const randomize = document.querySelector('.randomize');
+    const story = document.querySelector('.story');
+
+    function randomValueFromArray(array) {
+        const random = Math.floor(Math.random() * array.length);
+        // const random = Math.floor(Math.random() * array.length);常用（这里无需加1）。
+        return array[random];
+    }
+
+    let insertX = ['怪兽威利', '大老爹', '圣诞老人'];
+    let insertY = ['肯德基', '迪士尼乐园', '白宫'];
+    let insertZ = ['自燃了', '在人行道化成了一坨泥', '变成一只鼻涕虫爬走了'];
+
+    randomize.addEventListener('click', result);
+
+    function result() {
+        let repeat = randomValueFromArray(insertX);
+        let celsius = Math.floor(Math.random()*100+50)+'摄氏度';
+        let newStory = '今天气温'
+            + 'default'
+            + '。'
+            + repeat
+            + '出门散步。'
+            + '当走到'
+            + randomValueFromArray(insertY)
+            + '门前时，突然就'
+            + randomValueFromArray(insertZ)
+            + '。人们都惊呆了，李雷全程目睹但并没有慌，因为'
+            + repeat
+            + '是一个 140 公斤的胖子，天气又辣么热。';
+
+        if (customName.value !== '') {
+            const name = customName.value;
+            newStory = newStory.replace('李雷', name);
+        }
+
+        if (document.getElementById("american").checked) {
+            const weight = Math.round(140 * 2.20462) + ' 磅';
+            const fahrenheit = ((celsius)*9/5+32) + ' 华氏度';
+            newStory = newStory.replace('default', fahrenheit);
+            newStory = newStory.replace('140 公斤', weight);
+        }
+
+        else {
+            newStory = newStory.replace('default', celsius);
+        }
+
+        story.textContent = newStory;
+    }
+</script>
+</body>
+</html>

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d27c8b32-49a3-4bcd-b32b-4fb8c82c15f6" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/jokesGenerator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -107,7 +112,12 @@
       <workItem from="1664452952916" duration="108000" />
       <workItem from="1664606438819" duration="16104000" />
       <workItem from="1664630001259" duration="876000" />
-      <workItem from="1664636644281" duration="302000" />
+      <workItem from="1664636644281" duration="773000" />
+      <workItem from="1664710322283" duration="8115000" />
+      <workItem from="1664760371450" duration="6525000" />
+      <workItem from="1664785636849" duration="2232000" />
+      <workItem from="1664798123566" duration="2109000" />
+      <workItem from="1664805928098" duration="5525000" />
     </task>
     <servers />
   </component>
