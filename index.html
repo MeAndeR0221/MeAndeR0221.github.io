@@ -193,7 +193,9 @@
         <figure>&lt;p&gt;My cat is very grumpy.&lt;p&gt;</figure>
         <h3>HTML 元素详解</h3>
         让我们深入探索一下这个段落元素。<br>
-        <div class="pic"><img alt="grumpy" src="images/grumpy.png"></div>
+        <div class="pic" id="special">
+            <button name="special">点击查看</button>
+        </div>
         这个元素的主要部分有：
         <ol>
             <li>开始标签（Opening tag）：包含元素的名称（本例为 p），被大于号、小于号所包围。
@@ -362,12 +364,20 @@ Getting_started_with_the_web/HTML_basics/finished-test-page-small.png"></div>
 </article>
 <script>
     //不想写js辣😭
-    const address = document.querySelector('address');
-    const a = document.querySelector('address a');
-    address.onclick = function() {
-        a.href='https://www.bilibili.com/video/BV1GJ411x7h7/';
-        a.textContent='???';
+    const special = document.getElementById('special');
+    const button = document.getElementsByTagName('button')
+    const image = document.createElement('img');
+    image.setAttribute('src','images/grumpy.png');
+    special.addEventListener('click',show);
+    function show(){
+        special.removeChild(special.childNodes[1]);
+        special.appendChild(image);
     }
+
+    const me =document.createElement("a");
+    me.setAttribute('href','https://www.bilibili.com/video/BV1GJ411x7h7')
+    alert(me.href);
+    console.log(me.href);
 </script>
 </body>
 </html>

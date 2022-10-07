@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Random canvas circles</title>
+  <style>
+    html {
+      width: 100%;
+    }
+
+    canvas {
+      display: block;
+      z-index: 10;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    button {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      border-radius: 15px;
+      float: left;
+      opacity: 25%;
+    }
+    input {
+      width: 150px;
+      display: inline;
+      margin-left: 85.8%;
+      margin-bottom: -50px;
+      position: absolute;
+    }
+
+  </style>
+</head>
+<body>
+
+<button>Update</button>
+<input placeholder="input q to exit.">
+<canvas></canvas>
+
+
+<script>
+  const btn = document.querySelector('button');
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');//***
+  const exit = document.querySelector('input');
+
+  let WIDTH = document.documentElement.clientWidth;//***
+  let HEIGHT = document.documentElement.clientHeight;//***
+
+  canvas.width = WIDTH;//覆盖整个屏幕
+  canvas.height = HEIGHT;
+
+  function random(number) {
+    return Math.floor(Math.random()*number);
+  }
+
+  btn.addEventListener('mouseover',over)
+  function over() {
+    btn.textContent='click here';
+  }
+
+  btn.addEventListener('mouseout',out)
+  function out() {
+    btn.textContent='update';
+  }
+
+  btn.onclick = function() {
+    document.body.style.backgroundColor =
+            'rgb(' + random(256) + ',' + random(256) + ',' + random(256) + ')';
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,WIDTH,HEIGHT);
+    for(let i = 0; i < 800; i++) {
+      ctx.beginPath();
+      ctx.fillStyle =  'rgba(' + random(256) + ',' + random(256) + ',' + random(256) +
+              ','+ Math.random()+')';
+      ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+      ctx.fill();
+    }
+  }
+
+  btn.addEventListener('click',draw);
+
+  exit.addEventListener('keydown',function quit(input){
+    if (input.key === 'q') {
+      document.body.innerHTML='done!';
+    }
+  })
+</script>
+
+</body>
+</html>

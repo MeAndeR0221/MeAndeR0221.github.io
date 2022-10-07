@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Image gallery</title>
+  <style>
+    h1 {
+      font-family: helvetica, arial, sans-serif;
+      text-align: center;
+    }
+
+    .full-img {
+      position: relative;
+      display: block;
+      width: 640px;
+      height: 480px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 640px;
+      height: 480px;
+      background-color: rgba(0,0,0,0);
+    }
+
+    button {
+      background: rgba(150,150,150,0.6);
+      text-shadow: 1px 1px 1px white;
+      border: 1px solid #999;
+      position: absolute;
+      cursor: pointer;
+      top: 2px;
+      left: 2px;
+    }
+
+    .thumb-bar img {
+      display: block;
+      width: 20%;
+      float: left;
+      cursor: pointer;
+  }
+  </style>
+</head>
+
+<body>
+<h1>Image gallery example</h1>
+
+<div class="full-img">
+  <img class="displayed-img" src="images/pic1.jpg" alt="Closeup of a human eye">
+  <div class="overlay"></div>
+  <button class="dark">Darken</button>
+</div>
+
+<div class="thumb-bar">
+
+</div>
+</body>
+<script>
+document.body.style.width=document.documentElement.clientWidth+'px';
+document.body.style.height=document.documentElement.clientHeight+'px';
+document.body.style.margin='0px';
+document.body.style.textAlign= 'center';
+
+  const displayedImage = document.querySelector('.displayed-img');
+  const thumbBar = document.querySelector('.thumb-bar');
+  const btn = document.querySelector('button');
+  const overlay = document.querySelector('.overlay');
+  /* Declaring the array of image filenames */
+  const images = ['pic1.jpg', `pic2.jpg`, `pic3.jpg`, `pic4.jpg`, `pic5.jpg`];
+  const alts = {
+    'pic1.jpg' : 'Closeup of a human eye',
+    'pic2.jpg' : 'Rock that looks like a wave',
+    'pic3.jpg' : 'Purple and white pansies',
+    'pic4.jpg' : 'Section of wall from a pharoah\'s tomb',
+    'pic5.jpg' : 'Large moth on a leaf'
+  }
+  /* Looping through images */
+  for (const image of images) {
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', 'images/' + image );
+    newImage.setAttribute('alt', alts[image]);
+    thumbBar.appendChild(newImage);
+    newImage.addEventListener('click', e => {
+      displayedImage.src = e.target.src;
+      displayedImage.alt = e.target.alt;
+    });
+  }
+  /* Wiring up the Darken/Lighten button */
+  btn.addEventListener('click', () => {
+    const btnClass = btn.getAttribute('class');
+    if (btnClass === 'dark') {
+      btn.setAttribute('class','light');
+      btn.textContent = 'Lighten';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    } else {
+      btn.setAttribute('class','dark');
+      btn.textContent = 'Darken';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+    }
+  });
+</script>
+</html>

@@ -54,52 +54,44 @@
     const customName = document.getElementById('customname');
     const randomize = document.querySelector('.randomize');
     const story = document.querySelector('.story');
-
+//DOM
     function randomValueFromArray(array) {
         const random = Math.floor(Math.random() * array.length);
         // const random = Math.floor(Math.random() * array.length);常用（这里无需加1）。
         return array[random];
     }
-
+//定义随机取数组内元素序号的函数
     let insertX = ['怪兽威利', '大老爹', '圣诞老人'];
     let insertY = ['肯德基', '迪士尼乐园', '白宫'];
     let insertZ = ['自燃了', '在人行道化成了一坨泥', '变成一只鼻涕虫爬走了'];
-
+//笑话库
     randomize.addEventListener('click', result);
-
+//为按钮绑定点击事件
     function result() {
         let repeat = randomValueFromArray(insertX);
         let celsius = Math.floor(Math.random()*100+50)+'摄氏度';
-        let newStory = '今天气温'
-            + 'default'
-            + '。'
-            + repeat
-            + '出门散步。'
-            + '当走到'
-            + randomValueFromArray(insertY)
-            + '门前时，突然就'
-            + randomValueFromArray(insertZ)
-            + '。人们都惊呆了，李雷全程目睹但并没有慌，因为'
-            + repeat
-            + '是一个 140 公斤的胖子，天气又辣么热。';
-
+        let newStory = `今天气温default。${repeat}出门散步。当走到` + randomValueFromArray(insertY)
+            + '门前时，突然就' + randomValueFromArray(insertZ)
+            + `。人们都惊呆了，李雷全程目睹但并没有慌，因为 ${repeat} 是一个 140 公斤的胖子，天气又辣么热。`;
+//笑话模板
         if (customName.value !== '') {
             const name = customName.value;
             newStory = newStory.replace('李雷', name);
         }
-
+//名字替换（如果有）
         if (document.getElementById("american").checked) {
             const weight = Math.round(140 * 2.20462) + ' 磅';
-            const fahrenheit = ((celsius)*9/5+32) + ' 华氏度';
+            const fahrenheit = (parseInt(celsius))*9/5+32 + ' 华氏度';
             newStory = newStory.replace('default', fahrenheit);
             newStory = newStory.replace('140 公斤', weight);
         }
-
+//单位替换
         else {
             newStory = newStory.replace('default', celsius);
         }
-
+//保持公制不变（checked）
         story.textContent = newStory;
+        //输出最终文本
     }
 </script>
 </body>
