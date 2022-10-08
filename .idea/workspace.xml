@@ -8,14 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d27c8b32-49a3-4bcd-b32b-4fb8c82c15f6" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/function-library.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heroes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/random-canvas-circles.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bouncing-balls-start.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evilCircle.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes.html" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jokesGenerator.html" beforeDir="false" afterPath="$PROJECT_DIR$/jokesGenerator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +129,9 @@
       <workItem from="1665027041429" duration="1696000" />
       <workItem from="1665043273494" duration="720000" />
       <workItem from="1665108909390" duration="3173000" />
+      <workItem from="1665133147517" duration="11418000" />
+      <workItem from="1665209609605" duration="10180000" />
+      <workItem from="1665220179896" duration="6706000" />
     </task>
     <servers />
   </component>

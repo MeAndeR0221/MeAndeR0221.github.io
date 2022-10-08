@@ -7,6 +7,16 @@
     </title>
 </head>
 <style>
+    html {
+        background-image: url("images/bg.jpeg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        overflow: scroll;
+        width: 100%;
+        height: 100%;
+    }
     * {
         margin: 0;
         font-family: "Helvetica", sans-serif;
@@ -46,21 +56,11 @@
         color: black;
     }
 
-    body {
-        width: 100%;
-        height: 100%;
-    }
-
     article {
         overflow: auto;
         padding: 2.5%;
         width: 95%;
         height: 2.5%;
-        background-image: url("images/bg.jpeg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
     }
 
     span {
@@ -129,6 +129,7 @@
         list-style-type: decimal-leading-zero;
     }
 
+
     .section1 {
         font-weight: bolder;
         font-size: 150%;
@@ -137,7 +138,11 @@
     .pic {
         opacity: 80%;
         text-align: center;
-        margin: 12px 0 12px 0;
+        margin: 5px 0 5px 0;
+    }
+
+    button {
+
     }
 
     img {
@@ -194,7 +199,7 @@
         <h3>HTML 元素详解</h3>
         让我们深入探索一下这个段落元素。<br>
         <div class="pic" id="special">
-            <button name="special">点击查看</button>
+            <button name="special" id="show">点击查看</button>
         </div>
         这个元素的主要部分有：
         <ol>
@@ -361,23 +366,42 @@ Getting_started_with_the_web/HTML_basics/alt-text-example.png"></div>
         <div class="pic"><img alt="summary" src="https://developer.mozilla.org/en-US/docs/Learn/
 Getting_started_with_the_web/HTML_basics/finished-test-page-small.png"></div>
     </section>
+    <div>
+        <button id="game">play a game</button>
+    </div>
 </article>
 <script>
     //不想写js辣😭
     const special = document.getElementById('special');
     const button = document.getElementsByTagName('button')
     const image = document.createElement('img');
+    let status = false;
     image.setAttribute('src','images/grumpy.png');
-    special.addEventListener('click',show);
-    function show(){
-        special.removeChild(special.childNodes[1]);
-        special.appendChild(image);
-    }
 
-    const me =document.createElement("a");
-    me.setAttribute('href','https://www.bilibili.com/video/BV1GJ411x7h7')
-    alert(me.href);
-    console.log(me.href);
+    special.addEventListener('click',()=> {
+
+    if (status) {
+        document.getElementById('show').textContent = '展开图片';
+        special.removeChild(image);
+        status = false;
+    }
+    else {
+            document.getElementById('show').textContent = '收起图片';
+            special.appendChild(image);
+            status = true;
+        }
+    })
+
+    const cheat =document.createElement("a");
+    cheat.setAttribute('href','https://www.bilibili.com/video/BV1GJ411x7h7')
+    alert(cheat.href);
+    console.log(cheat.href);
+
+    const game = document.getElementById('game');
+    game.addEventListener('click',() => {
+        document.location.href='evilCircle.html'
+        }
+    )
 </script>
 </body>
 </html>

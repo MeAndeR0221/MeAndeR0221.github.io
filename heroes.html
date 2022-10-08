@@ -2,7 +2,6 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-
     <title>Our superheroes</title>
     <style>
         @font-face {
@@ -77,11 +76,14 @@
     const section = document.querySelector('section');
     const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
     const request = new XMLHttpRequest();
+
     request.open('GET', requestURL);
-    request.responseType = 'json';
+    request.responseType = 'text'; // now we're getting a string!
     request.send();
+
     request.onload = function() {
-        let superHeroes = request.response;
+        let superHeroesText = request.response; // get the string from the response
+        let superHeroes = JSON.parse(superHeroesText); // convert it to an object
         populateHeader(superHeroes);
         showHeroes(superHeroes);
     }

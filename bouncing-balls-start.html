@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>弹跳彩球</title>
+    <style>
+        html, body {
+            margin: 0;
+        }
+
+        html {
+            font-family: sans-serif;
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+            height: inherit;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: -1px;
+            position: absolute;
+            margin: 0;
+            top: -4px;
+            /*absolute position*/
+            right: 5px;
+            color: transparent;
+            text-shadow: 0 0 4px white;
+        }
+    </style>
+</head>
+
+<body>
+<h1>弹跳彩球</h1>
+<canvas></canvas>
+</body>
+<script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const width = canvas.width = window.innerWidth;//***
+    const height = canvas.height = window.innerHeight;//***
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }// 生成随机数的函数
+
+    function randomColor() {
+        return 'rgb(' +
+            random(0, 255) + ', ' +
+            random(0, 255) + ', ' +
+            random(0, 255) + ')';
+    }//生成随机rgb颜色
+
+    function Ball(x, y, velX, velY, color, size) {
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.color = color;
+        this.size = size;
+    }// 小球构造器
+
+    Ball.prototype.draw = function () {
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.fill();
+    }// 绘制小球函数
+
+    Ball.prototype.update = function () {
+        if ((this.x + this.size) >= width) {
+            this.velX = -(this.velX);
+        }
+        if ((this.x - this.size) <= 0) {
+            this.velX = -(this.velX);
+        }
+        if ((this.y + this.size) >= height) {
+            this.velY = -(this.velY);
+        }
+        if ((this.y - this.size) <= 0) {
+            this.velY = -(this.velY);
+        }
+        this.x += this.velX;
+        this.y += this.velY;
+    }//防止小球出边界和运动规律
+
+    let balls = [];//数组存放小球
+
+    while (balls.length < 50) {
+        let size = random(10, 20);
+        let ball = new Ball(// 为避免绘制错误，球至少离画布边缘球本身一倍宽度的距离
+            random(0 + size, width - size),
+            random(0 + size, height - size),
+            random(-10, 10),
+            random(-10, 10),
+            randomColor(),
+            size
+        );
+        balls.push(ball);
+    }
+
+    function loop() {
+        ctx.fillStyle = 'rgba(60, 70, 20, 0.45)';//将整个画布的颜色设置成半透明的黑色
+        ctx.fillRect(0, 0, width, height);//起始坐标、绘制矩形的宽高，画填充满画布的矩形。
+        /*在下一个视图画出来时用来遮住之前的视图。如果不这样做得话，
+        你就会在屏幕上看到一条蛇的形状而不是小球的运动了。
+        用来填充的颜色设置成半透明的rgba(0,0,0,0.25)，也就是让之前的视图留下来一点点，
+        从而你可以看到小球运动时的轨迹。如果你将 0.25 设置成 1 时，你就完全看不到了。*/
+        for (let i = 0; i < balls.length; i++) {
+            balls[i].draw();
+            balls[i].update();
+            balls[i].collisionDetect();
+        }//每个小球调用draw()和update()画出自己，在接下来的每一帧都按速度进行位置更新。
+
+        requestAnimationFrame(loop);/*再运行一次函数——当一个函数正在运行时传递相同的函数名，
+        从而每隔一小段时间都会运行一次这个函数，这样我们可以得到一个平滑的动画效果。
+        这主要是通过递归完成的，从而可以一遍又一遍得运行。*/
+    }
+
+    Ball.prototype.collisionDetect = function() {
+        for (let j = 0; j < balls.length; j++) {
+            if (this !== balls[j]) {
+                const dx = this.x - balls[j].x;
+                const dy = this.y - balls[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < this.size + balls[j].size) {
+                    balls[j].color = this.color = randomColor();
+                    this.velX = -(this.velX);
+                    this.velY = -(this.velY);
+                    balls[j].velX = -(balls[j].velX);
+                    balls[j].velY = -(balls[j].velY);
+                }
+            }
+        }
+    }//碰撞检测与变色
+
+    loop();//开始
+</script>
+</html>
