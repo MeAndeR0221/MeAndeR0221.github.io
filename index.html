@@ -17,6 +17,7 @@
         width: 100%;
         height: 100%;
     }
+
     * {
         margin: 0;
         font-family: "Helvetica", sans-serif;
@@ -69,14 +70,15 @@
     }
 
     h1 {
+        backdrop-filter: blur(500px) saturate(500%);
+        box-shadow: #327cd1 5px 5px;
         letter-spacing: 40px;
         opacity: 75%;
-        border-style: dashed;
-        background-image: linear-gradient(gold, white, darkgray);
+        border-style: double;
         border-radius: 20px;
         margin: 8px auto 58px auto;
         padding: 4px 6px 4px 6px;
-        width: 80%;
+        width: 70%;
         border-color: green;
         border-width: 8px;
         line-height: 1.2em;
@@ -85,7 +87,7 @@
         text-align: center;
     }
 
-    h1+p {
+    h1 + p {
         margin: 10px auto 5px auto;
         box-shadow: 5px 5px #327cd1;
 
@@ -141,8 +143,8 @@
         margin: 5px 0 5px 0;
     }
 
-    button {
-
+    #final {
+        margin-bottom: 500px;
     }
 
     img {
@@ -155,6 +157,140 @@
         background-color: darkmagenta;
     }
 
+    #game {
+        filter: saturate(125%);
+        background: linear-gradient(45deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4, lightgreen);
+        background-size: 600%;
+        border-style: none;
+        border-radius: 60px;
+        height: 125px;
+        line-height: 125px;
+        width: 42%;
+        color: white;
+        margin: 2% 29% 2% 29%;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: bolder;
+        z-index: 1;
+    }
+
+    #game::before {
+        background: linear-gradient(45deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4, lightgreen);
+        background-size: 600%;
+        border-style: none;
+        position: absolute;
+        filter: saturate(175%) blur(30px);
+        content: "";
+        top: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 60px;
+        height: 125px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    #game:hover {
+        animation: game 10s infinite;
+    }
+
+    #game:hover::before {
+        animation: game 10s infinite;
+    }
+
+    #primes {
+        filter: saturate(125%);
+        background: linear-gradient(45deg, cornflowerblue, yellow, red, rebeccapurple, greenyellow);
+        background-size: 600%;
+        border-style: none;
+        border-radius: 60px;
+        height: 125px;
+        line-height: 125px;
+        width: 42%;
+        color: white;
+        margin: 2% 29% 2% 29%;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: bolder;
+        z-index: 1;
+    }
+
+    #primes::before {
+        background: linear-gradient(45deg, cornflowerblue, yellow, red, rebeccapurple, greenyellow);
+        background-size: 600%;
+        border-style: none;
+        position: absolute;
+        filter: saturate(175%) blur(30px);
+        content: "";
+        top: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 60px;
+        height: 125px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    #primes:hover {
+        animation: game 10s infinite;
+    }
+
+    #primes:hover::before {
+        animation: game 10s infinite;
+    }
+
+    #guess {
+        filter: saturate(125%);
+        background: linear-gradient(45deg, wheat, lightcoral, lawngreen, cornflowerblue, darkorange);
+        background-size: 600%;
+        border-style: none;
+        border-radius: 60px;
+        height: 125px;
+        line-height: 125px;
+        width: 42%;
+        color: white;
+        margin: 2% 29% 2% 29%;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: bolder;
+        z-index: 1;
+    }
+
+    #guess::before {
+        background: linear-gradient(45deg, wheat, lightcoral, lawngreen, cornflowerblue, darkorange);
+        background-size: 600%;
+        border-style: none;
+        position: absolute;
+        filter: saturate(175%) blur(30px);
+        content: "";
+        top: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 60px;
+        height: 125px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    #guess:hover {
+        animation: game 10s infinite;
+    }
+
+    #guess:hover::before {
+        animation: game 10s infinite;
+    }
+
+    @keyframes game {
+        100% {
+            background-position: -600% 0;
+        }
+    }
 </style>
 <body>
 <article>
@@ -168,21 +304,21 @@
         </address>
         <h1>HTML基础</h1>
         <p>
-        <mark id="first">超文本标记语言</mark>
-        (
-        <mark>H</mark>
-        yper
-        <mark>T</mark>
-        ext
-        <mark>M</mark>
-        arkup
-        <mark>L</mark>
-        anguage，
-        简称：
-        <mark>HTML</mark>
-        )是一种用来结构化 Web 网页及其内容的标记语言。
-        网页内容可以是：一组段落、一个重点信息列表，
-        也可以含有图片和数据表。正如标题所示，本文将对 HTML 及其功能做一个基本介绍。
+            <mark id="first">超文本标记语言</mark>
+            (
+            <mark>H</mark>
+            yper
+            <mark>T</mark>
+            ext
+            <mark>M</mark>
+            arkup
+            <mark>L</mark>
+            anguage，
+            简称：
+            <mark>HTML</mark>
+            )是一种用来结构化 Web 网页及其内容的标记语言。
+            网页内容可以是：一组段落、一个重点信息列表，
+            也可以含有图片和数据表。正如标题所示，本文将对 HTML 及其功能做一个基本介绍。
         </p>
     </section>
     <section>
@@ -199,7 +335,7 @@
         <h3>HTML 元素详解</h3>
         让我们深入探索一下这个段落元素。<br>
         <div class="pic" id="special">
-            <button name="special" id="show">点击查看</button>
+            <button id="show" name="special">点击查看</button>
         </div>
         这个元素的主要部分有：
         <ol>
@@ -360,15 +496,15 @@ Getting_started_with_the_web/HTML_basics/alt-text-example.png"></div>
         <br>
         <hr>
     </section>
-    <section>
+    <section id="final">
         <h2>小结</h2>
         如果你一直跟着这篇文章里的指导做的话，你应该完成了一个像下面这样的页面：
         <div class="pic"><img alt="summary" src="https://developer.mozilla.org/en-US/docs/Learn/
 Getting_started_with_the_web/HTML_basics/finished-test-page-small.png"></div>
     </section>
-    <div>
-        <button id="game">play a game</button>
-    </div>
+    <button id="game">play a game</button>
+    <button id="primes">generate primes</button>
+    <button id="guess">guess number</button>
 </article>
 <script>
     //不想写js辣😭
@@ -376,32 +512,37 @@ Getting_started_with_the_web/HTML_basics/finished-test-page-small.png"></div>
     const button = document.getElementsByTagName('button')
     const image = document.createElement('img');
     let status = false;
-    image.setAttribute('src','images/grumpy.png');
+    image.setAttribute('src', 'images/grumpy.png');
 
-    special.addEventListener('click',()=> {
+    special.addEventListener('click', () => {
 
-    if (status) {
-        document.getElementById('show').textContent = '展开图片';
-        special.removeChild(image);
-        status = false;
-    }
-    else {
+        if (status) {
+            document.getElementById('show').textContent = '展开图片';
+            special.removeChild(image);
+            status = false;
+        } else {
             document.getElementById('show').textContent = '收起图片';
             special.appendChild(image);
             status = true;
         }
     })
 
-    const cheat =document.createElement("a");
-    cheat.setAttribute('href','https://www.bilibili.com/video/BV1GJ411x7h7')
+    const cheat = document.createElement("a");
+    cheat.setAttribute('href', 'https://www.bilibili.com/video/BV1GJ411x7h7')
     alert(cheat.href);
     console.log(cheat.href);
 
-    const game = document.getElementById('game');
-    game.addEventListener('click',() => {
-        document.location.href='evilCircle.html'
-        }
-    )
+    document.getElementById('game').addEventListener('click', () => {
+        document.location.href = 'evilCircle.html'
+    })
+
+    document.getElementById('primes').addEventListener('click', () => {
+        document.location.href = 'worker.html'
+    })
+
+    document.getElementById('guess').addEventListener('click', () => {
+        document.location.href = 'number-guessing-game.html'
+    })
 </script>
 </body>
 </html>

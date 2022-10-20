@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Number of primes</title>
+  <style>
+    textarea {
+      display: block;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<label for="quota">Number of primes:</label>
+<input type="text" id="quota" name="quota" value="1000000">
+
+<button id="generate">Generate primes</button>
+<button id="reload">Reload</button>
+
+<textarea id="user-input" rows="5" cols="62" placeholder="Try typing in here immediately after pressing 'Generate primes.'"></textarea>
+
+<div id="output"></div>
+
+</body>
+<script>
+  // 在 "generate.js" 中创建一个新的 worker
+  const worker = new Worker('./generate.js');//只要主脚本创建 worker，这些代码就会运行
+
+  // 当用户点击 "Generate primes" 时，给 worker 发送一条消息。
+  // 消息中的 command 属性是 "generate", 还包含另外一个属性 "quota"，即要生成的质数。
+  document.querySelector('#generate').addEventListener('click', () => {
+    worker.postMessage({
+      command: 'generate',
+      quota: document.querySelector('#quota').value
+    });
+  });
+
+  // 当 worker 给主线程回发一条消息时，为用户更新 output 框，包含生成的质数（从 message 中获取）。
+  worker.addEventListener('message', message => {
+    document.querySelector('#output').textContent = `Finished generating ${message.data.length} primes!`;
+    document.querySelector('textarea').value= message.data.primes;
+  });
+
+  document.querySelector('#reload').addEventListener('click', () => {
+    document.querySelector('#user-input').value = 'Try typing in here immediately after pressing "Generate primes"';
+    document.location.reload();
+  });
+</script>
+</html>
