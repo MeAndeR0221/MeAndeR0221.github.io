@@ -8,14 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d27c8b32-49a3-4bcd-b32b-4fb8c82c15f6" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/generate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sequencing-animation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/theReact/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theReact/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Administrator/Documents/re_act",
+    "last_opened_file_path": "D:/Administrator/Documents/HTML/theReact/tic_tac_toe/src",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,7 +63,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Administrator\Documents\HTML\theReact\tic_tac_toe\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Administrator\Documents\HTML" />
       <recent name="D:\Administrator\Documents" />
       <recent name="D:\Administrator\Documents\HTML\images" />
     </key>
@@ -150,6 +149,8 @@
       <workItem from="1666097805112" duration="83000" />
       <workItem from="1666102783925" duration="3268000" />
       <workItem from="1666280440300" duration="5529000" />
+      <workItem from="1666319348857" duration="435000" />
+      <workItem from="1666320784852" duration="2308000" />
     </task>
     <servers />
   </component>

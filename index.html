@@ -529,20 +529,19 @@ Getting_started_with_the_web/HTML_basics/finished-test-page-small.png"></div>
 
     const cheat = document.createElement("a");
     cheat.setAttribute('href', 'https://www.bilibili.com/video/BV1GJ411x7h7')
-    alert(cheat.href);
     console.log(cheat.href);
 
-    document.getElementById('game').addEventListener('click', () => {
-        document.location.href = 'evilCircle.html'
-    })
+    alert('😭😭')
 
-    document.getElementById('primes').addEventListener('click', () => {
-        document.location.href = 'worker.html'
-    })
+    function dlc(idName,file) {
+        document.getElementById(idName).addEventListener('click', () => {
+            document.location.href = file
+        })
+    }
 
-    document.getElementById('guess').addEventListener('click', () => {
-        document.location.href = 'number-guessing-game.html'
-    })
+    dlc('game','evilCircle.html')
+    dlc('primes','worker.html')
+    dlc('guess','number-guessing-game.html')
 </script>
 </body>
 </html>
